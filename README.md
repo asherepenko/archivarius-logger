@@ -3,7 +3,7 @@
 [![](https://jitci.com/gh/asherepenko/archivarius-logger/svg)](https://jitci.com/gh/asherepenko/archivarius-logger)
 [![](https://jitpack.io/v/asherepenko/archivarius-logger.svg)](https://jitpack.io/#asherepenko/archivarius-logger) 
 
-JSON Logger implementation with Archivarius for Android. Based on [Logger](https://github.com/asherepenko/android-logger) and [Archivarius](https://github.com/asherepenko/android-archivarius).
+Base JSON Logger implementation for Android. Based on [Logger](https://github.com/asherepenko/android-logger) and [Archivarius](https://github.com/asherepenko/android-archivarius).
 
 - [Archivarius README.md](https://github.com/asherepenko/android-archivarius/blob/master/README.md)
 - [Logger README.md](https://github.com/asherepenko/android-logger/blob/master/README.md)
