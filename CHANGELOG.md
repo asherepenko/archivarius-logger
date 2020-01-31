@@ -1,6 +1,11 @@
 1.0.1
 -----
 *2020-01-31*
+ - Fix `Proguard` rules
+ 
+1.0.1
+-----
+*2020-01-31*
  - Update package name
 
 1.0.0
