@@ -1,7 +1,10 @@
-package com.sherepenko.android.logger
+package com.sherepenko.android.archivarius.logger
 
 import androidx.annotation.VisibleForTesting
 import com.sherepenko.android.archivarius.Archivarius
+import com.sherepenko.android.logger.BaseLogger
+import com.sherepenko.android.logger.BaseLoggerParams
+import com.sherepenko.android.logger.LogContext
 
 open class ArchivariusLogger
 @VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
@@ -16,7 +19,9 @@ protected constructor(
 
     constructor(applicationId: String, archivarius: Archivarius) :
         this(
-            ArchivariusLogWriter(archivarius),
+            ArchivariusLogWriter(
+                archivarius
+            ),
             mapOf(BaseLoggerParams.APPLICATION_ID to applicationId)
         )
 

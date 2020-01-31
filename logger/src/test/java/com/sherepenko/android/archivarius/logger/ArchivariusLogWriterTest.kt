@@ -1,4 +1,4 @@
-package com.sherepenko.android.logger
+package com.sherepenko.android.archivarius.logger
 
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider.getApplicationContext
@@ -14,6 +14,8 @@ import com.sherepenko.android.archivarius.data.LogType
 import com.sherepenko.android.archivarius.entries.JsonLogEntry
 import com.sherepenko.android.archivarius.uploaders.LogUploadWorker
 import com.sherepenko.android.archivarius.uploaders.LogUploader
+import com.sherepenko.android.logger.BaseLoggerParams
+import com.sherepenko.android.logger.LogLevel
 import java.io.File
 import org.junit.Before
 import org.junit.Test
@@ -31,7 +33,10 @@ class ArchivariusLogWriterTest {
         ArchivariusAnalytics.init(TestArchivariusAnalytics())
         ArchivariusStrategy.init(TestArchivariusStrategy(getApplicationContext()))
         archivarius = mock()
-        logWriter = ArchivariusLogWriter(archivarius)
+        logWriter =
+            ArchivariusLogWriter(
+                archivarius
+            )
     }
 
     @Test

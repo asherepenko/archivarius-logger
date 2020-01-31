@@ -1,9 +1,14 @@
-package com.sherepenko.android.logger
+package com.sherepenko.android.archivarius.logger
 
 import android.util.Log
 import com.sherepenko.android.archivarius.Archivarius
 import com.sherepenko.android.archivarius.ArchivariusStrategy
 import com.sherepenko.android.archivarius.entries.JsonLogEntry
+import com.sherepenko.android.logger.BaseLoggerParams
+import com.sherepenko.android.logger.LogContext
+import com.sherepenko.android.logger.LogLevel
+import com.sherepenko.android.logger.LogWriter
+import com.sherepenko.android.logger.extend
 import io.reactivex.Completable
 
 interface GlobalLogContextContainer {
@@ -17,7 +22,8 @@ interface GlobalLogContextContainer {
 
 class ArchivariusLogWriter(
     private val archivarius: Archivarius
-) : LogWriter, GlobalLogContextContainer {
+) : LogWriter,
+    GlobalLogContextContainer {
 
     private var globalLogContext: LogContext = emptyMap()
 
