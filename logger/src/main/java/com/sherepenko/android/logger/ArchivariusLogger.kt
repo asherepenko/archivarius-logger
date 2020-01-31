@@ -20,7 +20,6 @@ protected constructor(
             mapOf(BaseLoggerParams.APPLICATION_ID to applicationId)
         )
 
-
     constructor(applicationId: String, logWriter: ArchivariusLogWriter) :
         this(logWriter, mapOf(BaseLoggerParams.APPLICATION_ID to applicationId))
 }
