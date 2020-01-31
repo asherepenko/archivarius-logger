@@ -9,8 +9,8 @@
 
 -renamesourcefileattribute SourceFile
 
--keep public class com.sherepenko.android.logger.** {
+-keep public class com.sherepenko.android.archivarius.logger.** {
   public protected *;
 }
 
--keep interface com.sherepenko.android.logger.**
+-keep interface com.sherepenko.android.archivarius.logger.**
