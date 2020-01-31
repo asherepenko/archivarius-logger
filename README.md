@@ -90,3 +90,5 @@ val logger = ArchivariusLogger(
 // Write logs with Logger
 logger.info("This is a test info message")
 ```
+
+- [Sample App](https://github.com/asherepenko/s3-json-logger)
