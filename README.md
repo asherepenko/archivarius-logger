@@ -1,5 +1,6 @@
 # Logger with Archivarius
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![](https://jitci.com/gh/asherepenko/archivarius-logger/svg)](https://jitci.com/gh/asherepenko/archivarius-logger)
 [![](https://jitpack.io/v/asherepenko/archivarius-logger.svg)](https://jitpack.io/#asherepenko/archivarius-logger) 
 
