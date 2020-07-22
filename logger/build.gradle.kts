@@ -1,6 +1,5 @@
 import org.jetbrains.dokka.gradle.DokkaTask
 import org.jetbrains.kotlin.config.KotlinCompilerVersion
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
@@ -34,6 +33,10 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
     lintOptions {
@@ -86,12 +89,6 @@ dependencies {
 }
 
 tasks {
-    withType<KotlinCompile> {
-        kotlinOptions {
-            jvmTarget = "1.8"
-        }
-    }
-
     val dokka by getting(DokkaTask::class) {
         outputFormat = "html"
         outputDirectory = "$buildDir/dokka"
