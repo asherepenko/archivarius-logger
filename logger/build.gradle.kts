@@ -1,12 +1,11 @@
-import org.jetbrains.dokka.gradle.DokkaTask
 import org.jetbrains.kotlin.config.KotlinCompilerVersion
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
     id("com.android.library")
     id("com.sherepenko.gradle.plugin-build-version") version "0.2.1"
-    id("org.jlleitschuh.gradle.ktlint") version "9.2.1"
-    id("org.jetbrains.dokka") version "0.10.1"
+    id("org.jlleitschuh.gradle.ktlint") version "9.4.0"
+    id("org.jetbrains.dokka") version "1.4.10"
     kotlin("android")
     kotlin("android.extensions")
 }
@@ -89,14 +88,9 @@ dependencies {
 }
 
 tasks {
-    val dokka by getting(DokkaTask::class) {
-        outputFormat = "html"
-        outputDirectory = "$buildDir/dokka"
-    }
-
     val javadocJar by registering(Jar::class) {
         archiveClassifier.set("javadoc")
-        from(dokka)
+        from(dokkaHtml)
     }
 
     val sourcesJar by registering(Jar::class) {
