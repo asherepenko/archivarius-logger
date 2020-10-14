@@ -4,18 +4,16 @@ import android.content.Context
 import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.work.ListenableWorker
-import com.nhaarman.mockitokotlin2.any
-import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.verify
 import com.sherepenko.android.archivarius.Archivarius
 import com.sherepenko.android.archivarius.ArchivariusAnalytics
 import com.sherepenko.android.archivarius.ArchivariusStrategy
 import com.sherepenko.android.archivarius.data.LogType
-import com.sherepenko.android.archivarius.entries.JsonLogEntry
 import com.sherepenko.android.archivarius.uploaders.LogUploadWorker
 import com.sherepenko.android.archivarius.uploaders.LogUploader
 import com.sherepenko.android.logger.BaseLoggerParams
 import com.sherepenko.android.logger.LogLevel
+import io.mockk.mockk
+import io.mockk.verify
 import java.io.File
 import org.junit.Before
 import org.junit.Test
@@ -32,11 +30,8 @@ class ArchivariusLogWriterTest {
     fun setUp() {
         ArchivariusAnalytics.init(TestArchivariusAnalytics())
         ArchivariusStrategy.init(TestArchivariusStrategy(getApplicationContext()))
-        archivarius = mock()
-        logWriter =
-            ArchivariusLogWriter(
-                archivarius
-            )
+        archivarius = mockk(relaxed = true)
+        logWriter = ArchivariusLogWriter(archivarius)
     }
 
     @Test
@@ -48,7 +43,7 @@ class ArchivariusLogWriterTest {
 
         logWriter.write(LogLevel.INFO, logContext)
 
-        verify(archivarius).log(any<JsonLogEntry>())
+        verify { archivarius.log(any()) }
     }
 }
 
@@ -77,8 +72,10 @@ private class TestArchivariusStrategy(
 
     override val logUploader: LogUploader =
         object : LogUploader {
-            override fun uploadLog(logFile: File, logType: LogType) = Unit
+            override fun uploadLog(logFile: File, logType: LogType) =
+                Unit
         }
 
-    override val logUploadWorker: Class<out ListenableWorker> = LogUploadWorker::class.java
+    override val logUploadWorker: Class<out ListenableWorker> =
+        LogUploadWorker::class.java
 }
