@@ -3,7 +3,7 @@ import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
     id("com.android.library")
-    id("com.sherepenko.gradle.plugin-build-version") version "0.2.1"
+    id("com.sherepenko.gradle.plugin-build-version") version "0.2.3"
     id("org.jlleitschuh.gradle.ktlint") version "9.4.0"
     id("org.jetbrains.dokka") version "1.4.10"
     kotlin("android")
