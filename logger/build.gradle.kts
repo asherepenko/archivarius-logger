@@ -4,8 +4,8 @@ import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 plugins {
     id("com.android.library")
     id("com.sherepenko.gradle.plugin-build-version") version "0.2.3"
-    id("org.jlleitschuh.gradle.ktlint") version "9.4.0"
-    id("org.jetbrains.dokka") version "1.4.10"
+    id("org.jlleitschuh.gradle.ktlint") version "10.0.0"
+    id("org.jetbrains.dokka") version "1.4.30"
     kotlin("android")
     kotlin("android.extensions")
 }
@@ -78,13 +78,13 @@ dependencies {
     api("com.github.asherepenko:android-archivarius:$archivariusVersion")
     api("com.github.asherepenko:android-logger:$loggerVersion")
     implementation(kotlin("stdlib-jdk8", KotlinCompilerVersion.VERSION))
-    testImplementation("junit:junit:4.13")
+    testImplementation("junit:junit:4.13.1")
     testImplementation("androidx.test:core:1.3.0")
     testImplementation("androidx.test:runner:1.3.0")
     testImplementation("androidx.test.ext:junit:1.1.2")
-    testImplementation("com.google.truth:truth:1.0.1")
-    testImplementation("io.mockk:mockk:1.10.2")
-    testImplementation("org.robolectric:robolectric:4.4")
+    testImplementation("com.google.truth:truth:1.1.2")
+    testImplementation("io.mockk:mockk:1.10.6")
+    testImplementation("org.robolectric:robolectric:4.5.1")
 }
 
 tasks {
